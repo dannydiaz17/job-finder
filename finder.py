@@ -24,8 +24,8 @@ def make_df(file):
 def get_coordinates(df):
     geolocator = Nominatim(user_agent="job-finder")
     
-    for n, items in df["Address"].iterrows():
-        location = geolocator.geocode(df["Address"][n])
+    for items in df["Address"]:
+        location = geolocator.geocode(df["Address"][items])
         print(location)
 
 def __init__():
